@@ -1,0 +1,24 @@
+@import "tailwindcss";
+/* THEME: change colours/fonts here only — derived from the logo (ink black, seal red) */
+@theme {
+  --color-ink: #111111;
+  --color-ink-soft: #1c1a19;
+  --color-paper: #f8f2e7;
+  --color-paper-dark: #efe6d3;
+  --color-seal: #d92027;
+  --color-seal-dark: #b01319;
+  --color-gold: #c9a24b;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-cn: "Ma Shan Zheng", serif;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { font-family: var(--font-body); background: var(--color-paper); color: var(--color-ink); }
+h1,h2,h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+/* Seigaiha (wave) pattern from the logo bowl */
+.waves { background-image: radial-gradient(circle at 50% 100%, transparent 38%, rgba(201,162,75,.22) 39% 41%, transparent 42% 56%, rgba(201,162,75,.22) 57% 59%, transparent 60%); background-size: 56px 28px; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes steam { 0%{transform:translateY(0);opacity:0} 40%{opacity:.5} 100%{transform:translateY(-60px);opacity:0} }
+.steam { animation: steam 4s ease-in infinite; }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none} .steam{animation:none} html{scroll-behavior:auto} }
